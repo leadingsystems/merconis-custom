@@ -1,6 +1,6 @@
 {
   "name": "leadingsystems/merconis-custom",
-  "description": "Leading Systems API as a Contao 4 bundle",
+  "description": "Merconis custom module as starting point for the development of own Merconis extensions",
   "keywords": [
     "merconis",
     "leading systems"
@@ -29,7 +29,7 @@
   "extra": {
     "contao-manager-plugin": "LeadingSystems\\ApiBundle\\ContaoManager\\Plugin",
     "branch-alias": {
-      "dev-master": "2.0.x-dev"
+      "dev-master": "1.0.x-dev"
     }
   }
 }
