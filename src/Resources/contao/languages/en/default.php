@@ -1,4 +1,2 @@
 <?php
-$GLOBALS['TL_LANG']['MSC']['ls_api']['rgxpErrorMessages']['ls_api_key']['passwordInvalid'] = 'The password in field "%s" must be at least 10 characters in length and must not contain a colon';
-$GLOBALS['TL_LANG']['MSC']['ls_api']['rgxpErrorMessages']['ls_api_key']['changePasswordSyntaxWrong'] = 'Please use the following syntax to change the API key: oldPassword:newPassword';
-$GLOBALS['TL_LANG']['MSC']['ls_api']['rgxpErrorMessages']['ls_api_key']['oldPasswordDoesNotMatch'] = 'The old password you entered is not correct. Please enter the password that was used to create the previous API key.';
+$GLOBALS['TL_LANG']['MSC']['merconis-custom']['headline1'] = 'Merconis Custom test module';

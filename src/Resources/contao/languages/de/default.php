@@ -1,4 +1,2 @@
 <?php
-$GLOBALS['TL_LANG']['MSC']['ls_api']['rgxpErrorMessages']['ls_api_key']['passwordInvalid'] = 'Das Passwort in Feld "%s" muss mindestens 10 Zeichen lang sein und darf keinen Doppelpunkt enthalten';
-$GLOBALS['TL_LANG']['MSC']['ls_api']['rgxpErrorMessages']['ls_api_key']['changePasswordSyntaxWrong'] = 'Bitte verwenden Sie folgende Syntax, um den API-Key zu ändern: altesPasswort:neuesPasswort';
-$GLOBALS['TL_LANG']['MSC']['ls_api']['rgxpErrorMessages']['ls_api_key']['oldPasswordDoesNotMatch'] = 'Das von Ihnen angegebene alte Passwort ist nicht korrekt. Bitte geben Sie das Passwort an, das verwendet wurde, um den bisherigen API-Key zu erstellen.';
+$GLOBALS['TL_LANG']['MSC']['merconis-custom']['headline1'] = 'Merconis Custom Test-Modul';

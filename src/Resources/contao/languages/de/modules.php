@@ -1,10 +1,6 @@
 <?php
 
-$GLOBALS['TL_LANG']['MOD']['ls_api'] = 'LS API';
+$GLOBALS['TL_LANG']['MOD']['merconis_custom'] = 'Merconis Custom';
 
-$GLOBALS['TL_LANG']['FMD']['ls_api'] = 'LS API';
-$GLOBALS['TL_LANG']['FMD']['ls_apiReceiver'] = array('LS API RECEIVER');
-
-$GLOBALS['TL_LANG']['MOD']['ls_api_key'] = array('API-Key');
-$GLOBALS['TL_LANG']['MOD']['ls_api_user'] = array('API-Benutzer');
-$GLOBALS['TL_LANG']['MOD']['be_mod_ls_apiReceiver'] = array('API-Receiver');
+$GLOBALS['TL_LANG']['FMD']['merconis_custom'] = 'Merconis Custom';
+$GLOBALS['TL_LANG']['FMD']['mod_merconis_custom_dummy'] = array('Test-Modul');

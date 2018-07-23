@@ -1,13 +1,13 @@
 <?php
 
-namespace LeadingSystems\Api;
+namespace Merconis\Custom;
 
-$GLOBALS['TL_DCA']['tl_ls_api_user'] = array(
+$GLOBALS['TL_DCA']['tl_merconis_custom_dummy'] = array(
 	'config' => array(
 		'dataContainer' => 'Table',
 		'onload_callback' => array
 		(
-			array('LeadingSystems\Api\tl_ls_api_user', 'checkPermission')
+			array('Merconis\custom\tl_merconis_custom_dummy', 'checkPermission')
 		),
 		'sql' => array
 		(
@@ -23,14 +23,14 @@ $GLOBALS['TL_DCA']['tl_ls_api_user'] = array(
 		'sorting' => array(
 			'mode' => 1,
 			'flag' => 1,
-			'fields' => array('username'),
+			'fields' => array('title'),
 			'disableGrouping' => false,
 			'panelLayout' => 'sort,search,limit'			
 		),
 		
 		'label' => array(
-			'fields' => array('description', 'username'),
-			'format' => '<strong title="%s">%s</strong>'
+			'fields' => array('title', 'description'),
+			'format' => '<h2>%s</h2><p>%s</p>'
 		),
 		
 		'global_operations' => array(
@@ -45,23 +45,23 @@ $GLOBALS['TL_DCA']['tl_ls_api_user'] = array(
 		
 		'operations' => array(
 			'edit' => array(
-				'label'               => &$GLOBALS['TL_LANG']['tl_ls_api_user']['edit'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_merconis_custom_dummy']['edit'],
 				'href'                => 'act=edit',
 				'icon'                => 'edit.gif'
 			),
 			'copy' => array(
-				'label'               => &$GLOBALS['TL_LANG']['tl_ls_api_user']['copy'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_merconis_custom_dummy']['copy'],
 				'href'                => 'act=copy',
 				'icon'                => 'copy.gif'
 			),
 			'delete' => array(
-				'label'               => &$GLOBALS['TL_LANG']['tl_ls_api_user']['delete'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_merconis_custom_dummy']['delete'],
 				'href'                => 'act=delete',
 				'icon'                => 'delete.gif',
 				'attributes'          => 'onclick="if (!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\')) return false; Backend.getScrollOffset();"'
 			),
 			'show' => array(
-				'label'               => &$GLOBALS['TL_LANG']['tl_ls_api_user']['show'],
+				'label'               => &$GLOBALS['TL_LANG']['tl_merconis_custom_dummy']['show'],
 				'href'                => 'act=show',
 				'icon'                => 'show.gif'
 			)
@@ -70,7 +70,7 @@ $GLOBALS['TL_DCA']['tl_ls_api_user'] = array(
 	),
 	
 	'palettes' => array(
-		'default' => 'username,password;description;'
+		'default' => '{title_legend},title;{description_legend},description;'
 	),
 	
 	'fields' => array(
@@ -82,9 +82,9 @@ $GLOBALS['TL_DCA']['tl_ls_api_user'] = array(
 		(
 			'sql'                     => "int(10) unsigned NOT NULL default '0'"
 		),
-		'username' => array
+		'title' => array
 		(
-			'label' => &$GLOBALS['TL_LANG']['tl_ls_api_user']['username'],
+			'label' => &$GLOBALS['TL_LANG']['tl_merconis_custom_dummy']['title'],
 			'exclude' => true,
 			'search' => true,
 			'sorting' => true,
@@ -101,23 +101,9 @@ $GLOBALS['TL_DCA']['tl_ls_api_user'] = array(
 			'sql' => "varchar(64) COLLATE utf8_bin NULL"
 		),
 
-		'password' => array
-		(
-			'label' => &$GLOBALS['TL_LANG']['tl_ls_api_user']['password'],
-			'exclude' => true,
-			'inputType' => 'password',
-			'eval' => array(
-				'mandatory' => true,
-				'preserveTags' => true,
-				'minlength' => 10,
-				'tl_class' => 'clr'
-			),
-			'sql' => "varchar(255) NOT NULL default ''"
-		),
-
 		'description' => array
 		(
-			'label' => &$GLOBALS['TL_LANG']['tl_ls_api_user']['description'],
+			'label' => &$GLOBALS['TL_LANG']['tl_merconis_custom_dummy']['description'],
 			'exclude' => true,
 			'inputType' => 'textarea',
 			'sql' => "text NULL"
@@ -125,14 +111,14 @@ $GLOBALS['TL_DCA']['tl_ls_api_user'] = array(
 	)
 );
 
-class tl_ls_api_user extends \Backend {
+class tl_merconis_custom_dummy extends \Backend {
 	public function __construct() {
 		parent::__construct();
 		$this->import('BackendUser', 'User');
 	}
 
 	/**
-	 * Check permissions to edit table tl_ls_api_user
+	 * Check permissions to edit table tl_merconis_custom_dummy
 	 *
 	 * @throws \Contao\CoreBundle\Exception\AccessDeniedException
 	 */

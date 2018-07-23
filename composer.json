@@ -1,16 +1,16 @@
 {
-  "name": "leadingsystems/contao-api",
+  "name": "leadingsystems/merconis-custom",
   "description": "Leading Systems API as a Contao 4 bundle",
   "keywords": [
-    "contao",
-    "leading systems",
-    "bundle"
+    "merconis",
+    "leading systems"
   ],
   "type": "contao-bundle",
   "license": "proprietary",
   "require": {
     "php": ">=7.0.0",
-    "contao/core-bundle": "~4.4"
+    "contao/core-bundle": "~4.4",
+    "leadingsystems/contao-merconis": "^4.0"
   },
   "autoload": {
     "psr-4": {
