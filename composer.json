@@ -14,7 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "LeadingSystems\\ApiBundle\\": "src/"
+      "LeadingSystems\\MerconisCustomBundle\\": "src/"
     },
     "classmap": [
       "src/Resources/contao/"
