@@ -27,7 +27,7 @@
     ]
   },
   "extra": {
-    "contao-manager-plugin": "LeadingSystems\\ApiBundle\\ContaoManager\\Plugin",
+    "contao-manager-plugin": "LeadingSystems\\MerconisCustomBundle\\ContaoManager\\Plugin",
     "branch-alias": {
       "dev-master": "1.0.x-dev"
     }
