@@ -13,8 +13,7 @@ $GLOBALS['TL_DCA']['tl_merconis_custom_dummy'] = array(
 		(
 			'keys' => array
 			(
-				'id' => 'primary',
-				'username' => 'unique'
+				'id' => 'primary'
 			)
 		)
 	),
@@ -92,9 +91,6 @@ $GLOBALS['TL_DCA']['tl_merconis_custom_dummy'] = array(
 			'inputType' => 'text',
 			'eval' => array(
 				'mandatory' => true,
-				'rgxp' => 'extnd',
-				'nospace' => true,
-				'unique' => true,
 				'maxlength' => 64,
 				'tl_class'=>'w50'
 			),
