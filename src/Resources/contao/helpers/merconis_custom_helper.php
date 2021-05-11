@@ -5,6 +5,34 @@ class merconis_custom_helper
 {
     /*
      * -- Registration: --
+     * $GLOBALS['MERCONIS_HOOKS']['checkIfCacheCanBeUsed'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_checkIfCacheCanBeUsed');
+     *
+     * -- Invocation: --
+     * When Merconis checks whether a product search must actually be performed or whether a previous search result
+     * can be used from the cache.
+     *
+     * -- Parameters: --
+     * 	1. $str_productListId - information about which product list this call is related to
+     *  2. $bln_cacheCanBeUsed - true/false indicating whether or not the cache can be used based on prior checks in the merconis core
+     *
+     * -- Return value: --
+     * $bln_cacheCanBeUsed (true/false) to indicate whether or not to use the cache
+     *
+     * -- Objective: --
+     * e.g. disabling the cache on a project level based on product list ids. This can be necessary if product list
+     * outputs are being manipulated with hooks.
+     *
+     */
+    public function merconis_hook_checkIfCacheCanBeUsed($str_productListId, $bln_cacheCanBeUsed) {
+        if ($str_productListId === 'standard') {
+            $bln_cacheCanBeUsed = false;
+        }
+
+        return $bln_cacheCanBeUsed;
+    }
+	
+    /*
+     * -- Registration: --
      * $GLOBALS['MERCONIS_HOOKS']['preparingOrderDataToStore'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_preparingOrderDataToStore');
      *
      * -- Invocation: --
