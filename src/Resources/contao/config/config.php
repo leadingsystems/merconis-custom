@@ -20,6 +20,7 @@ $GLOBALS['FE_MOD']['merconis_custom'] = array(
 //$GLOBALS['MERCONIS_HOOKS']['preparingOrderDataToStore'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_preparingOrderDataToStore');
 //$GLOBALS['MERCONIS_HOOKS']['replaceWidgetTemplateForReview'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_replaceWidgetTemplateForReview');
 //$GLOBALS['MERCONIS_HOOKS']['storeCartItemInOrder'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_storeCartItemInOrder');
+//$GLOBALS['MERCONIS_HOOKS']['afterProductSearchBeforeFilter'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_afterProductSearchBeforeFilter');
 //$GLOBALS['MERCONIS_HOOKS']['beforeProductlistOutputBeforePagination'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_beforeProductlistOutputBeforePagination');
 //$GLOBALS['MERCONIS_HOOKS']['customAjaxHook'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_customAjaxHook');
 //$GLOBALS['MERCONIS_HOOKS']['callingHookedProductOrVariantFunction'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_callingHookedProductOrVariantFunction');
