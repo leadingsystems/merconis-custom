@@ -120,6 +120,47 @@ class merconis_custom_helper
 
         return $arr_item;
     }
+	
+    /*
+     * -- Registration: --
+     * $GLOBALS['MERCONIS_HOOKS']['afterProductSearchBeforeFilter'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_afterProductSearchBeforeFilter');
+     *
+     * -- Invocation: --
+     * After a product search has been performed and before the resulting product list is filtered.
+     *
+     * -- Parameters: --
+     * 	1. $productListID - information about which product list this call is related to
+     * 	2. $arrProducts - an array containing product ids as keys and product information arrays as values.
+     *
+     * -- Return value: --
+     * $arrProducts
+     *
+     * -- Objective: --
+     * e.g. manipulation of the product list output (e.g. adding a custom filter functionality
+     * that can be combined with the standard filter)
+     *
+     */
+    public function merconis_hook_afterProductSearchBeforeFilter($productListID, $arrProducts) {
+	/*
+	 * Example: Removing all products which don't have variants.
+	 */
+        if ($str_productListID !== 'standard') {
+            return $arr_products;
+        }
+
+        if (!is_array($arr_products) || !count($arr_products)) {
+            return $arr_products;
+        }
+	    
+	foreach ($arr_products as $int_key => $arr_product) {
+            if (!is_array($arr_product['variants']) || !count($arr_product['variants'])) {
+		    unset($arr_products[$int_key]);
+	    }
+	}
+
+        return $arr_products;
+    }
+
 
     /*
      * -- Registration: --
