@@ -5,6 +5,70 @@ class merconis_custom_helper
 {
     /*
      * -- Registration: --
+     * $GLOBALS['MERCONIS_HOOKS']['getProductData_priceCheapestVariantBeforeTax'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_getProductData_priceCheapestVariantBeforeTax');
+     *
+     * -- Invocation: --
+     * When Merconis determines the price of the cheapest product variant
+     *
+     * -- Parameters: --
+     * 	1. $obj_product - the product object
+     *
+     * -- Return value: --
+     * $float_lowestPriceBeforeTax - holding the price that should be considered as the cheapest variant price
+     *
+     * -- Objective: --
+     * e.g. skipping variants which don't have a realistic price. This can be necessary if a sample piece of the product is among the product's variants.
+     *
+     */
+    public function merconis_hook_getProductData_priceCheapestVariantBeforeTax($obj_product) {
+        $float_lowestPriceBeforeTax = $obj_product->_priceBeforeTax;
+        $int_count = 0;
+        foreach ($obj_product->_variants as $obj_variant) {
+            if ($obj_variant->_flexContentExistsLanguageIndependent('flexContent1LanguageIndependent') && $obj_variant->_flexContentsLanguageIndependent['flexContent1LanguageIndependent'] == 'sample-piece') {
+                continue;
+            }
+            if ($obj_variant->_priceBeforeTax < $float_lowestPriceBeforeTax || $int_count == 0) {
+                $float_lowestPriceBeforeTax = $obj_variant->_priceBeforeTax;
+            }
+            $int_count++;
+        }
+        return $float_lowestPriceBeforeTax;
+    }
+	
+    /*
+     * -- Registration: --
+     * $GLOBALS['MERCONIS_HOOKS']['getProductData_unscaledPriceCheapestVariantBeforeTax'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_getProductData_unscaledPriceCheapestVariantBeforeTax');
+     *
+     * -- Invocation: --
+     * When Merconis determines the price of the cheapest unscaled product variant
+     *
+     * -- Parameters: --
+     * 	1. $obj_product - the product object
+     *
+     * -- Return value: --
+     * $float_lowestPriceBeforeTax - holding the price that should be considered as the cheapest unscaled variant price
+     *
+     * -- Objective: --
+     * e.g. skipping variants which don't have a realistic price. This can be necessary if a sample piece of the product is among the product's variants.
+     *
+     */
+    public function merconis_hook_getProductData_unscaledPriceCheapestVariantBeforeTax($obj_product) {
+        $float_lowestPriceBeforeTax = $obj_product->_unscaledPriceBeforeTax;
+        $int_count = 0;
+        foreach ($obj_product->_variants as $obj_variant) {
+            if ($obj_variant->_flexContentExistsLanguageIndependent('flexContent1LanguageIndependent') && $obj_variant->_flexContentsLanguageIndependent['flexContent1LanguageIndependent'] == 'sample-piece') {
+                continue;
+            }
+            if ($obj_variant->_unscaledPriceBeforeTax < $float_lowestPriceBeforeTax || $int_count == 0) {
+                $float_lowestPriceBeforeTax = $obj_variant->_unscaledPriceBeforeTax;
+            }
+            $int_count++;
+        }
+        return $float_lowestPriceBeforeTax;
+    }
+	
+    /*
+     * -- Registration: --
      * $GLOBALS['MERCONIS_HOOKS']['checkIfCacheCanBeUsed'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_checkIfCacheCanBeUsed');
      *
      * -- Invocation: --
