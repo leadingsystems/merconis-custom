@@ -16,6 +16,7 @@ $GLOBALS['FE_MOD']['merconis_custom'] = array(
 	'mod_merconis_custom_dummy' => 'Merconis\Custom\mod_merconis_custom_dummy'
 );
 
+//$GLOBALS['MERCONIS_HOOKS']['getProductData_unscaledPriceCheapestVariantBeforeTax'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_getProductData_unscaledPriceCheapestVariantBeforeTax');
 //$GLOBALS['MERCONIS_HOOKS']['checkIfCacheCanBeUsed'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_checkIfCacheCanBeUsed');
 //$GLOBALS['MERCONIS_HOOKS']['preparingOrderDataToStore'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_preparingOrderDataToStore');
 //$GLOBALS['MERCONIS_HOOKS']['replaceWidgetTemplateForReview'][] = array('Merconis\Custom\merconis_custom_helper', 'merconis_hook_replaceWidgetTemplateForReview');
